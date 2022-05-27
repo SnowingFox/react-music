@@ -1,17 +1,28 @@
 import type { RouteObject } from 'react-router-dom'
 import { Navigate, useRoutes } from 'react-router-dom'
-import Home from '@/pages/home/Home'
+import { Mine } from '@/pages/mine/Mine'
+import { MainLayout } from '@/layouts/Main/MainLayout'
+import Explore from '@/pages/explore/Explore'
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to={'/home'} />,
+    element: <Navigate to={'/main'} />,
   },
   {
-    path: '/home',
-    element: <Home />,
+    path: '/main',
+    element: <MainLayout />,
+    children: [
+      {
+        path: 'explore',
+        element: <Explore />,
+      },
+      {
+        path: 'mine',
+        element: <Mine />,
+      },
+    ],
   },
-
 ]
 
 export function RootRouter() {
