@@ -1,8 +1,20 @@
 import type { RouteObject } from 'react-router-dom'
 import { Navigate, useRoutes } from 'react-router-dom'
-import { Mine } from '@/pages/mine/Mine'
+import type { LazyExoticComponent, ReactNode } from 'react'
+import { Suspense, lazy } from 'react'
 import { MainLayout } from '@/layouts/Main/MainLayout'
-import Explore from '@/pages/explore/Explore'
+import type { ComponentProps } from '@/shared/types/utils'
+
+const Loadabel = (Component: LazyExoticComponent<any>) => (props: ComponentProps) => {
+  return <>
+    <Suspense fallback={<div>loading</div>}>
+      <Component {...props}/>
+    </Suspense>
+  </>
+}
+
+const Explore = Loadabel(lazy(() => import('@/pages/explore/Explore')))
+const Mine = Loadabel(lazy(() => import('@/pages/mine/Mine')))
 
 const routes: RouteObject[] = [
   {
@@ -26,9 +38,5 @@ const routes: RouteObject[] = [
 ]
 
 export function RootRouter() {
-  const routeEl = useRoutes(routes)
-
-  return <>
-    {routeEl}
-  </>
+  return useRoutes(routes)
 }

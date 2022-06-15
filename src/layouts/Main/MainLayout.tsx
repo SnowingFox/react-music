@@ -16,8 +16,7 @@ export function MainLayout() {
 
   return <>
     <Box>
-
-      <Box className={'w-[95vw] mx-auto'}>
+      <Box className={'w-screen min-h-screen bg-[#F4F4F4] px-[2.5vw] py-3'}>
         <Outlet />
       </Box>
       <MiniPlayer />

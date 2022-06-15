@@ -5,6 +5,7 @@
     "no-useless-return": "off",
     "curly": "off",
     "@typescript-eslint/brace-style": "off",
-    "n/handle-callback-err": "off"
+    "n/handle-callback-err": "off",
+    "react/display-name": "off"
   }
 }
