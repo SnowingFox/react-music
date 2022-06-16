@@ -1,17 +1,13 @@
 import { Box, IconButton } from '@mui/material'
+import { SearchSong } from '@/components/SearchSong/SearchSong'
 
-export function ExploreSearch() {
+export function Search() {
   return <>
     <Box className="flex justify-between text-sm gap1">
       <IconButton>
         <i className="i-heroicons-outline:menu-alt-1 text-2xl" />
       </IconButton>
-      <Box className="flex flex-[5] bg-white rounded-full px2">
-        <IconButton>
-          <i className="i-carbon:search"/>
-        </IconButton>
-        <p className="text-holder y-center">111</p>
-      </Box>
+      <SearchSong />
       <IconButton>
         <i className="i-carbon:microphone-filled" />
       </IconButton>

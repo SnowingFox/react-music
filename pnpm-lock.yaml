@@ -20,6 +20,7 @@ specifiers:
   axios: ^0.27.2
   eslint: ^8.15.0
   hox: ^1.1.6
+  mdui: ^1.0.2
   react: ^18.0.0
   react-dom: ^18.0.0
   react-query: ^3.39.0
@@ -37,6 +38,7 @@ dependencies:
   '@unocss/reset': 0.33.5
   axios: 0.27.2
   hox: 1.1.6_react@18.1.0
+  mdui: 1.0.2
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
   react-query: 3.39.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -2972,6 +2974,28 @@ packages:
     resolution: {integrity: sha512-kwqO0I0jtWr25KcfLm9pia8vLZ8qoAKhWZuZMbneJq3jjBD3gl5nZs8l8Tu3ZBlBAHVQtDur9rdDGyvtfVraHQ==}
     dev: true
 
+  /mdn-polyfills/5.20.0:
+    resolution: {integrity: sha512-AbTv1ytcoOUAkxw6u5oo2QPf27kEZgxBAQr49jFb4i2VnTnFGfJbcIQ9UDBOdfNECeXsgkYFwB2BkdeTfOzztw==}
+    dev: false
+
+  /mdui.jq/2.0.1:
+    resolution: {integrity: sha512-BNT4q/4gAqDYVNUVHmYoJoIu04Rmz0Ow0j38VwZgIahWphpyDdOxReQZzMUGDizXZUJ0+r+JpdKVxKMVP27VAg==}
+    engines: {node: '>=14'}
+    dependencies:
+      mdn-polyfills: 5.20.0
+      promise-polyfill: 8.2.3
+    dev: false
+
+  /mdui/1.0.2:
+    resolution: {integrity: sha512-LIaDjVjzyPY8PUjlhCXiE4mOXinh+jv38H/zsrR00/Y9OWzdncPlvir3mzZGuxT4sh9rHOrh06zfsOPoBjIhzA==}
+    engines: {node: '>=14'}
+    dependencies:
+      mdn-polyfills: 5.20.0
+      mdui.jq: 2.0.1
+      normalize.css: 8.0.1
+      promise-polyfill: 8.2.3
+    dev: false
+
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
     dev: true
@@ -3087,6 +3111,10 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+    dev: false
 
   /npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
@@ -3346,6 +3374,10 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
     dev: true
+
+  /promise-polyfill/8.2.3:
+    resolution: {integrity: sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg==}
+    dev: false
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}

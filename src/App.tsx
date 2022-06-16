@@ -3,7 +3,7 @@ import { RootRouter } from './route'
 
 function App() {
   return <>
-    <div id={'app'} className={'w-screen h-screen'}>
+    <div id={'app'} className={'w-screen min-h-screen overflow-hidden'}>
       <Box>
         <RootRouter />
       </Box>

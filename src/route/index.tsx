@@ -15,11 +15,16 @@ const Loadabel = (Component: LazyExoticComponent<any>) => (props: ComponentProps
 
 const Explore = Loadabel(lazy(() => import('@/pages/explore/Explore')))
 const Mine = Loadabel(lazy(() => import('@/pages/mine/Mine')))
+const Login = Loadabel(lazy(() => import('@/pages/auth/login')))
 
 const routes: RouteObject[] = [
   {
     path: '/',
     element: <Navigate to={'/main'} />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
   {
     path: '/main',
