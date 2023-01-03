@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "@antfu"
+  ],
+  "rules": {
+    "no-extra-semi": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-undef": "off",
+    "react/display-name": "off"
+  }
+}
