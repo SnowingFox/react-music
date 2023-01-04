@@ -9,7 +9,7 @@ const Banners: React.FC<{ data: IGETBannerResponseType }> = ({ data }) => {
     <Swiper
       spaceBetween={50}
       slidesPerView={1}
-      className={'!px2 w-full'}
+      className={'!px2 w-full center'}
       loop={true}
       autoplay={true}
     >
@@ -25,8 +25,8 @@ const Banners: React.FC<{ data: IGETBannerResponseType }> = ({ data }) => {
 }
 
 const BannerSkeleton = () => {
-  return <Box className={'px2 h-120px'}>
-    <Skeleton variant="rectangular" width="100%" />
+  return <Box className={'px2'}>
+    <Skeleton variant="rectangular" width="100%" className={'pt-38.88%'}/>
   </Box>
 }
 
