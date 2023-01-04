@@ -12,17 +12,22 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.3",
+    "axios": "^1.2.2",
     "notistack": "^2.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.5.6",
+    "react-query": "^3.39.2",
     "react-router": "^6.6.1",
     "react-router-dom": "^6.6.1",
     "react-spring": "^9.6.1",
-    "simplebar-react": "^2.4.3"
+    "simplebar-react": "^2.4.3",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
     "@iconify/json": "^2.2.1",
+    "@ohmyts/vite": "^0.0.8",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
