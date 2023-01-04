@@ -12,6 +12,7 @@ specifiers:
   '@types/react-dom': ^18.0.9
   '@typescript-eslint/eslint-plugin': ^5.48.0
   '@typescript-eslint/parser': ^5.48.0
+  '@unocss/reset': ^0.48.0
   '@vitejs/plugin-react-swc': ^3.0.0
   axios: ^1.2.2
   eslint: ^8.31.0
@@ -36,6 +37,7 @@ dependencies:
   '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
   '@emotion/styled': 11.10.5_qvatmowesywn4ye42qoh247szu
   '@mui/material': 5.11.3_lskpmcsdi7ipu6qpuapyu56ihm
+  '@unocss/reset': 0.48.0
   axios: 1.2.2
   notistack: 2.0.8_ucydyur6z63dfocbuf4s6tykwq
   react: 18.2.0
@@ -1399,7 +1401,6 @@ packages:
 
   /@unocss/reset/0.48.0:
     resolution: {integrity: sha512-i7z6Rbs7fXFD3NdlVJViFltpDJUCo5xDm5y01Xaoa4mJQHr/1335Ht0JW/emAJXf170UYSwb2rUeK1J3fty9eg==}
-    dev: true
 
   /@unocss/scope/0.48.0:
     resolution: {integrity: sha512-r/a89Ip2NWlhvEglsZ4qQMy6smCmgGyA8aOKSEpU59il9Lmxjsz8eVLqofeiRzjBI9NTutpfLoEw3vrAK0YxRA==}

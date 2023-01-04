@@ -1,6 +1,5 @@
 import React from 'react'
 import 'uno.css'
-import '@unocss/reset/normalize.css'
 import '@unocss/reset/tailwind.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Router } from './router/router'

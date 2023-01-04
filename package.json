@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.3",
+    "@unocss/reset": "^0.48.0",
     "axios": "^1.2.2",
     "notistack": "^2.0.8",
     "react": "^18.2.0",
