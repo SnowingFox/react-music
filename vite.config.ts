@@ -1,7 +1,6 @@
 import { join } from 'path'
-import * as process from 'process'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import Components from 'unplugin-react-components/vite'
 import { MuiResolver, createResolver } from 'unplugin-react-components'
 import Unocss from 'unocss/vite'
@@ -9,9 +8,6 @@ import { presetAttributify, presetIcons, presetUno, transformerAttributifyJsx } 
 import AutoImport from 'unplugin-auto-import/vite'
 import { ohmytsVite } from '@ohmyts/vite'
 import Inspect from 'vite-plugin-inspect'
-import * as dotenv from 'dotenv'
-
-dotenv.config()
 
 function resolve(dir: string): string {
   return join(__dirname, dir)
@@ -23,10 +19,14 @@ export default defineConfig({
       '@': resolve('src/'),
     },
   },
+  preview: {
+    port: 4174,
+  },
   server: {
     host: true,
   },
   plugins: [
+    react(),
     Unocss({
       shortcuts: [
         {
@@ -52,10 +52,8 @@ export default defineConfig({
         'react',
       ],
     }),
-    react(),
     Components({
       dts: true,
-      mode: 'prod',
       resolvers: [
         MuiResolver(),
         createResolver({
