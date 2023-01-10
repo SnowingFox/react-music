@@ -1,4 +1,6 @@
-export const NeteaseCloudMusicIcon = () => <i className={'i-ri:netease-cloud-music-fill'} />
+export const NeteaseCloudMusicIcon = () => (
+  <i className={'i-ri:netease-cloud-music-fill'} />
+)
 
 export const RadioPodcastIcon = () => <i className={'i-ion:radio-outline'} />
 

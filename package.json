@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint:fix": "pnpm run lint --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -26,7 +28,6 @@
     "swiper": "^8.4.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.34.0",
     "@iconify/json": "^2.2.1",
     "@ohmyts/vite": "^0.0.8",
     "@types/node": "^18.11.18",
@@ -38,11 +39,14 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.2",
     "typescript": "^4.9.3",
     "unocss": "^0.48.0",
     "unplugin-auto-import": "^0.12.1",
-    "unplugin-react-components": "^0.1.3",
+    "unplugin-react-components": "^0.1.4",
     "vite": "^4.0.0",
     "vite-plugin-inspect": "^0.7.12"
   }

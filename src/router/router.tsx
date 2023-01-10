@@ -5,13 +5,14 @@ import { Navigate } from 'react-router'
 import { AuthGuard } from '../guard/AuthGuard'
 import { Layout } from '../layout/layout'
 
-const Loadable = (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
-  return (
-    <Suspense fallback={<p>loading...</p>}>
-      <Component {...props} />
-    </Suspense>
-  )
-}
+const Loadable =
+  (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
+    return (
+      <Suspense fallback={<p>loading...</p>}>
+        <Component {...props} />
+      </Suspense>
+    )
+  }
 
 const Recommend = Loadable(lazy(() => import('@/pages/recommend/recommend')))
 const Mine = Loadable(lazy(() => import('@/pages/mine/mine')))
@@ -22,15 +23,17 @@ export function Router() {
   return useRoutes([
     {
       path: '/',
-      element: <Navigate to={'/app'}/>,
+      element: <Navigate to={'/app'} />,
     },
     {
       path: '/app',
-      element: <>
-        <AuthGuard>
-          <Layout />
-        </AuthGuard>
-      </>,
+      element: (
+        <>
+          <AuthGuard>
+            <Layout />
+          </AuthGuard>
+        </>
+      ),
       children: [
         { element: <Navigate to={'recommend'} />, index: true },
         { path: 'recommend', element: <Recommend /> },

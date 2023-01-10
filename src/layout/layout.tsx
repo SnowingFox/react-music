@@ -19,14 +19,12 @@ export const Layout: React.FC = () => {
   }, [route])
 
   return (
-    <Box w-screen h-screen overflow-hidden pt2 px2 className={'bg-black/5'}>
-      <Outlet />
-      <Box className={'fixed bottom-0 w-screen bg-white p1'}>
-        <BottomNavigation
-          className={'flex'}
-          showLabels
-          value={route}
-          onChange={(e, newRoute) => setRoute(newRoute)}>
+    <Box className={'bg-black/5 w-screen h-screen overflow-hidden'}>
+      <div p2>
+        <Outlet />
+      </div>
+      <div className={'fixed bottom-0 w-screen bg-white py1'}>
+        <BottomNavigation className={'flex'} showLabels value={route} onChange={(e, newRoute) => setRoute(newRoute)}>
           {bottoms.map((bottom) => {
             return (
               <BottomNavigationAction
@@ -39,7 +37,7 @@ export const Layout: React.FC = () => {
             )
           })}
         </BottomNavigation>
-      </Box>
+      </div>
     </Box>
   )
 }

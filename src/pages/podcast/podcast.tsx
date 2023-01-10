@@ -1,5 +1,3 @@
 export default function Podcast() {
-  return (
-    <div>podcast</div>
-  )
+  return <div>podcast</div>
 }

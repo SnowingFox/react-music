@@ -1,6 +1,6 @@
 import { join } from 'path'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import Components from 'unplugin-react-components/vite'
 import { MuiResolver, createResolver } from 'unplugin-react-components'
 import Unocss from 'unocss/vite'
@@ -30,27 +30,17 @@ export default defineConfig({
     Unocss({
       shortcuts: [
         {
-          'center': 'flex items-center justify-center',
+          center: 'flex items-center justify-center',
           'x-center': 'flex justify-center',
           'y-center': 'flex items-center',
         },
       ],
-      presets: [
-        presetUno(),
-        presetIcons(),
-        presetAttributify(),
-      ],
-      transformers: [
-        transformerAttributifyJsx(),
-      ],
+      presets: [presetUno(), presetIcons(), presetAttributify()],
+      transformers: [transformerAttributifyJsx()],
     }),
     AutoImport({
-      include: [
-        /\.[tj]sx?$/,
-      ],
-      imports: [
-        'react',
-      ],
+      include: [/\.[tj]sx?$/],
+      imports: ['react'],
     }),
     Components({
       dts: true,
@@ -63,14 +53,13 @@ export default defineConfig({
         })(),
       ],
     }),
-    ohmytsVite({
-      target: '/api',
-      rootDir: resolve('@types'),
-      proxyOptions: {
-        target: 'https://autumnfish.cn',
-      },
-      overwrite: false,
-    }),
+    // ohmytsVite({
+    //   target: '/api',
+    //   rootDir: resolve('@types'),
+    //   proxyOptions: {
+    //     target: 'http://localhost:3000',
+    //   },
+    // }),
     Inspect({
       build: true,
       outputDir: '.vite-inspect',
