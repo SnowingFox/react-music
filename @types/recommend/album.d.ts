@@ -2,10 +2,10 @@ declare interface IRecommendAlbumResponse {
   hasTaste: boolean
   code: number
   category: number
-  result: Result[]
+  result: IRecommendAlbumResponseResult[]
 }
 
-interface Result {
+declare interface IRecommendAlbumResponseResult {
   id: number
   type: number
   name: string

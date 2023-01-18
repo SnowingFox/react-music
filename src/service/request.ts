@@ -2,7 +2,7 @@ import type { AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://autumnfish.cn',
 })
 
 instance.interceptors.response.use((data) => data.data)
