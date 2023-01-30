@@ -3,6 +3,7 @@ import { LoopBanner } from '@/components/Banner'
 import { SwiperSlide } from 'swiper/react'
 import { FreeMode } from 'swiper'
 import React from 'react'
+import { useNavigate } from 'react-router'
 
 const AlbumItem: React.FC<{ data: IRecommendAlbumResponseResult }> = ({ data }) => {
   return (
@@ -15,6 +16,12 @@ const AlbumItem: React.FC<{ data: IRecommendAlbumResponseResult }> = ({ data }) 
 
 function AlbumList() {
   const { data } = useRecommendAlbum()
+  const navigate = useNavigate()
+
+  const navigateToMusicList = (id: number) => {
+    navigate(`/music-list/${id}`)
+  }
+
   return (
     <LoopBanner
       direction={'horizontal'}
@@ -25,7 +32,7 @@ function AlbumList() {
       freeMode={true}
     >
       {data?.result.map((item) => (
-        <SwiperSlide key={item.id}>
+        <SwiperSlide key={item.id} onClick={() => navigateToMusicList(item.id)}>
           <AlbumItem data={item} />
         </SwiperSlide>
       ))}

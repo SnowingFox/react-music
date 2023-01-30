@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router'
 import { Icons } from '@/components/Icons/Icons'
+import { motion } from 'framer-motion'
 
 const bottoms = [
   { label: '推荐', value: 'recommend', icon: Icons.NeteaseCloudMusicIcon },
@@ -8,6 +9,24 @@ const bottoms = [
   { label: '我的', value: 'mine', icon: Icons.MusicNotes },
   { label: '关注', value: 'following', icon: Icons.Following },
 ]
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'linear',
+  duration: 0.5,
+}
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+}
 
 export const Layout: React.FC = () => {
   const location = useLocation()
@@ -20,9 +39,15 @@ export const Layout: React.FC = () => {
 
   return (
     <Box className={'bg-black/5 w-screen h-screen overflow-hidden'}>
-      <div p2>
+      <motion.div
+        key={location.pathname}
+        initial="initial"
+        animate="in"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
         <Outlet />
-      </div>
+      </motion.div>
       <div className={'fixed bottom-0 w-screen bg-white py1'}>
         <BottomNavigation className={'flex'} showLabels value={route} onChange={(e, newRoute) => setRoute(newRoute)}>
           {bottoms.map((bottom) => {

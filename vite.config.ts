@@ -33,6 +33,7 @@ export default defineConfig({
           center: 'flex items-center justify-center',
           'x-center': 'flex justify-center',
           'y-center': 'flex items-center',
+          ellipsis: 'whitespace-nowrap text-ellipsis overflow-hidden',
         },
       ],
       presets: [presetUno(), presetIcons(), presetAttributify()],

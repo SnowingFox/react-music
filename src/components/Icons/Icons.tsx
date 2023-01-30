@@ -1,6 +1,4 @@
-export const NeteaseCloudMusicIcon = () => (
-  <i className={'i-ri:netease-cloud-music-fill'} />
-)
+export const NeteaseCloudMusicIcon = () => <i className={'i-ri:netease-cloud-music-fill'} />
 
 export const RadioPodcastIcon = () => <i className={'i-ion:radio-outline'} />
 
@@ -11,6 +9,10 @@ export const Icons = {
   Following: <i className={'i-icon-park-outline:concern'} />,
 }
 
-export const MenuIcon = () => <i className={'i-material-symbols:menu'} />
+export const MenuIcon = () => <i i-material-symbols:menu />
 
 export const SearchIcon = () => <i i-ep:search />
+
+export const BackArrowIcon = () => <i i-ic:baseline-arrow-back />
+
+export const RightIcon = () => <i i-ic:baseline-chevron-right />

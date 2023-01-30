@@ -2,22 +2,22 @@ import { useRoutes } from 'react-router-dom'
 import type { LazyExoticComponent } from 'react'
 import { Suspense } from 'react'
 import { Navigate } from 'react-router'
-import { AuthGuard } from '../guard/AuthGuard'
-import { Layout } from '../layout/layout'
+import { AuthGuard } from '@/guard/AuthGuard'
+import { Layout } from '@/layout/layout'
 
-const Loadable =
-  (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
-    return (
-      <Suspense fallback={<p>loading...</p>}>
-        <Component {...props} />
-      </Suspense>
-    )
-  }
+const Loadable = (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
+  return (
+    <Suspense fallback={<p>loading...</p>}>
+      <Component {...props} />
+    </Suspense>
+  )
+}
 
 const Recommend = Loadable(lazy(() => import('@/pages/recommend/recommend')))
 const Mine = Loadable(lazy(() => import('@/pages/mine/mine')))
 const Podcast = Loadable(lazy(() => import('@/pages/podcast/podcast')))
 const Following = Loadable(lazy(() => import('@/pages/following/following')))
+const MusicList = Loadable(lazy(() => import('@/pages/music-list/MusicList')))
 
 export function Router() {
   return useRoutes([
@@ -42,5 +42,6 @@ export function Router() {
         { path: 'following', element: <Following /> },
       ],
     },
+    { path: '/music-list/:id', element: <MusicList /> },
   ])
 }

@@ -4,7 +4,7 @@ import { RecommendAlbum } from '@/pages/recommend/components/album'
 
 const Recommend: React.FC = () => {
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2} className={'p2'}>
       <RecommendHeader />
       <RecommendBanner />
       <RecommendAlbum />
