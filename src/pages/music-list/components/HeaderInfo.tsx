@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMusicListQuery } from '@/shared/swr/music-list'
 import { IconButton, Typography } from '@mui/material'
-import { RightIcon } from '@/components/Icons/Icons'
+import { CommentIcon, RightIcon, ShareIcon, SubscribeIcon } from '@/components/Icons/Icons'
 
 const Description: React.FC<{ desc: string }> = ({ desc }) => {
   return (
@@ -43,19 +43,32 @@ const CoverImage: React.FC<{ url?: string }> = ({ url }) => {
 }
 
 const ShareButtonGroups = () => {
-  const { data, isLoading } = useMusicListQuery()
+  const { data } = useMusicListQuery()
+
+  const buttonGroup = useMemo(
+    () => [
+      { icon: <ShareIcon />, value: data?.playlist?.shareCount },
+      { icon: <CommentIcon />, value: data?.playlist?.commentCount },
+      { icon: <SubscribeIcon />, value: data?.playlist?.subscribedCount, bg: '!bg-red' },
+    ],
+    [data]
+  )
 
   return (
-    <div className={'flex justify-around'}>
-      <Button variant="outlined" className={'flex1'}>
-        Share
-      </Button>
-      <Button variant="outlined" className={'flex1'}>
-        Comments
-      </Button>
-      <Button variant="outlined" className={'flex1'}>
-        Collect
-      </Button>
+    <div className={'flex justify-between'}>
+      {buttonGroup.map((item, index) => (
+        <IconButton
+          className={`w-[30%] !border-none !text-xs !text-white !rounded-full ${
+            item.bg ? '!bg-#FF3740' : '!bg-white/30'
+          }`}
+          key={index}
+        >
+          <div className={'center gap1'}>
+            <div className={'!text-xl'}>{item.icon}</div>
+            <p>{item.value}</p>
+          </div>
+        </IconButton>
+      ))}
     </div>
   )
 }

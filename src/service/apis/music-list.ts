@@ -8,3 +8,12 @@ export function getMusicListRequest(id: number) {
     },
   })
 }
+
+export function getAllMusicPlaylist(id: number) {
+  return request<IPlaylistAllResponse>({
+    url: '/playlist/track/all',
+    params: {
+      id,
+    },
+  })
+}

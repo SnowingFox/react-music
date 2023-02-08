@@ -4,6 +4,7 @@ import React from 'react'
 import { MusicListCoverImage } from '@/pages/music-list/coverImage'
 import { MusicListHeader } from '@/pages/music-list/components/Header'
 import { useMusicListQuery } from '@/shared/swr/music-list'
+import { MusicListPlaylist } from '@/pages/music-list/components/Playlist'
 
 export default function MusicList() {
   const param = useParams()
@@ -21,8 +22,9 @@ export default function MusicList() {
     <div className={'w-screen h-screen overflow-hidden bg-black/10'}>
       <div>
         <MusicListCoverImage data={data} />
-        <div className={'absolute top-0 z-2'}>
-          <MusicListHeader data={data} />
+        <div className={'absolute top-0 z-2 w-screen  overflow-hidden'}>
+          <MusicListHeader />
+          <MusicListPlaylist />
         </div>
       </div>
     </div>

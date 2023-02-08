@@ -9,10 +9,16 @@ export const Icons = {
   Following: <i className={'i-icon-park-outline:concern'} />,
 }
 
-export const MenuIcon = () => <i i-material-symbols:menu />
+export const MenuIcon = () => <div i-material-symbols:menu />
 
-export const SearchIcon = () => <i i-ep:search />
+export const SearchIcon = () => <div i-ep:search />
 
-export const BackArrowIcon = () => <i i-ic:baseline-arrow-back />
+export const BackArrowIcon = () => <div i-ic:baseline-arrow-back />
 
-export const RightIcon = () => <i i-ic:baseline-chevron-right />
+export const RightIcon = () => <div i-ic:baseline-chevron-right />
+
+export const ShareIcon = () => <div i-mingcute:share-forward-fill />
+
+export const CommentIcon = () => <div i-eva:message-circle-fill />
+
+export const SubscribeIcon = () => <div i-eos-icons:activate-subscriptions />
